@@ -1,4 +1,4 @@
-import { REQUEST_USER_KEY } from './../../iam.constanst';
+import { REQUEST_USER_KEY } from '../../iam.constants';
 import {
   CanActivate,
   ExecutionContext,
@@ -30,7 +30,6 @@ export class AccessTokenGuard implements CanActivate {
         token,
         this.jwtConfiguration,
       );
-      console.log(payload);
 
       request[REQUEST_USER_KEY] = payload;
     } catch (error) {
