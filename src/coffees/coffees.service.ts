@@ -4,7 +4,7 @@ import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 
 @Injectable()
 export class CoffeesService {
-  create(createCoffeeDto: CreateCoffeeDto) {
+  create() {
     return 'This action adds a new coffee';
   }
 

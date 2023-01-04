@@ -1,3 +1,5 @@
+import { PermissionsGuard } from './authorization/guards/permissions.guard';
+import { RolesGuard } from './authorization/guards/roles.guard';
 import { RefreshTokenIdsStorage } from './authentication/refresh-token-ids.storage';
 import { AuthenticationGuard } from './authentication/guards/authentication.guard';
 import { AccessTokenGuard } from './authentication/guards/access-token.guard';
@@ -27,6 +29,10 @@ import { APP_GUARD } from '@nestjs/core';
     {
       provide: APP_GUARD,
       useClass: AuthenticationGuard,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: PermissionsGuard, // RolesGuard,
     },
     AccessTokenGuard,
     AuthenticationService,
